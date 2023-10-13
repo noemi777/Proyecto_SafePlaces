@@ -10,6 +10,7 @@ class Lugar(models.Model):
     street = models.CharField(max_length=70, verbose_name= 'Calle')
     numberstreet = models.IntegerField (verbose_name= 'Numero de Calle')
     postcode = models.IntegerField( verbose_name= 'Codigo Postal')
-
+    status = models.BooleanField(default=True, verbose_name= 'Status')
+    
     class Meta:
         db_table = 'lugares'
