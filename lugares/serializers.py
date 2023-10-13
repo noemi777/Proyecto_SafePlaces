@@ -4,4 +4,4 @@ from .models import Lugar
 class LugarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lugar
-        fields = ['id', 'name', 'description', 'state', 'city', 'colony', 'street', 'numberstreet', 'postcode']
+        fields = '__all__'
