@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lugares.views import RetriveLugares, CreateLugares
+from lugares.views import RetriveLugares, CreateLugares, RetriveLugaresAPIView
+from lugares import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lugares/', RetriveLugares.as_view(), name="lista-lugares"),
-    path('lugares/Create', CreateLugares.as_view())
+    path('lugares/list', views.RetriveLugares.as_view(), name="lista-lugares"),
+    path('lugares/Create', views.CreateLugares.as_view()),
+    path('lugares/<int:pk>', views.RetriveLugaresAPIView.as_view()),
 ]
